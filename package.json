@@ -1,0 +1,43 @@
+{
+  "name": "mediaprint-electron-console",
+  "version": "1.0.0",
+  "description": "Electron app per controllare e avviare aggiornamenti da percorso di rete",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "node ./node_modules/electron-builder/cli.js"
+  },
+  "author": "Alex Olivieri",
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^40.1.0",
+    "electron-builder": "^26.3.3"
+  },
+  "build": {
+    "appId": "it.mediaprint.console",
+    "productName": "Mediaprint Console",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "index.php",
+      "package.json"
+    ],
+    "win": {
+      "executableName": "MediaprintConsole",
+      "target": "nsis",
+      "icon": "src/img/favicon.ico",
+      "artifactName": "${productName} Setup ${version}.${ext}"
+    },
+     "nsis": {
+      "oneClick": false,
+      "perMachine": false
+    }
+  }
+}

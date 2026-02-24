@@ -1,0 +1,200 @@
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #0f1720;
+  --muted: #58667a;
+  --primary: #0b7a66;
+  --primary-hover: #08614f;
+  --border: #d6dce3;
+  --danger: #a31515;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(140deg, #edf2f5 0%, #f7fafc 48%, #eef3f7 100%);
+  color: var(--text);
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(21, 35, 57, 0.06);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.rows {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.rows span {
+  color: var(--muted);
+}
+
+.actions {
+  margin-top: 14px;
+}
+
+button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #b8c3ce;
+}
+
+#runInstallerBtn {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+#runInstallerBtn:hover {
+  background: var(--primary-hover);
+}
+
+#runInstallerBtn:disabled {
+  background: #9eb7b2;
+  border-color: #9eb7b2;
+  cursor: not-allowed;
+}
+
+select {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.status {
+  min-height: 22px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.apps-list {
+  display: grid;
+  gap: 12px;
+}
+
+.app-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fafbfd;
+}
+
+.app-info {
+  display: grid;
+  gap: 4px;
+}
+
+.app-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.app-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.app-actions {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
+.install-btn {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.install-btn:hover {
+  background: var(--primary-hover);
+}
+
+.install-btn:disabled {
+  background: #9eb7b2;
+  border-color: #9eb7b2;
+  cursor: not-allowed;
+}
+
+.app-error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .app-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-actions {
+    justify-items: start;
+  }
+}

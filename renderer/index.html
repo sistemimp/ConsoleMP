@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mediaprint Updater</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <h1>Mediaprint Electron Updater</h1>
+        <div class="topbar-actions">
+          <button id="refreshBtn">Ricarica</button>
+        </div>
+      </header>
+
+      <article class="card">
+        <h2>App disponibili</h2>
+        <p class="status" id="statusText">In attesa...</p>
+        <div id="appsList" class="apps-list"></div>
+      </article>
+    </main>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
